@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+:root {
+    --mainColor: #29335C;
+    --mainColorLight: #5767aa;
+    --secondColor: #DB3B39;
+    --textColor: #eee;
+  }
+  
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0 2rem;
+    background-color: var(--mainColor);
+    color: var(--textColor);
+  }
+  
+  nav a {
+    margin: 0 2rem;
+    color: var(--textColor);
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    color: var(--secondColor);
+  }
+  
+  header .nav-btn {
+    padding: 5px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--textColor);
+    visibility: hidden;
+    opacity: 0;
+    font-size: 1.8rem;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    header .nav-btn {
+      visibility: visible;
+      opacity: 1;
+    }
+  
+    header nav {
+      position: fixed;
+      top: 0;
+      left: -100%; /* Inicialmente, o menu está fora da tela */
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      background-color: var(--mainColor);
+      transition: left 0.5s; /* Transição para a propriedade left */
+    }
+  
+    header .responsive-nav nav {
+      left: 0; /* Quando a classe responsive-nav é adicionada, o menu aparece */
+    }
+  
+    header .nav-close-btn {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+    }
+  
+    nav a {
+      font-size: 1.5rem;
+    }
+  }
