@@ -5,7 +5,6 @@ const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
- /*  const [catData, setCatData] = useState([]); */
 
   const fetchData = async () => {
     
@@ -21,17 +20,7 @@ const Favorites = () => {
       console.log(error);
     }
   };
-    /*  axios
-      .get(
-        `https://api.thedogapi.com/v1/favourites?sub_id=my_user1`,
-        dogOptions
-      )
-      .then((response) => {
-        setFavorites(response.data);
-        console.log(response.data);
-      });
-  };
- */
+
   useEffect(() => {
     fetchData();
   }, []);

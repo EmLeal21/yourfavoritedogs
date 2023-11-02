@@ -1,6 +1,20 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto");
 
-/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;1,200;1,300;1,400&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+
+
+/* @import url("https://fonts.googleapis.com/css?family=Roboto");
+
+
 :root {
   --gh-pattern-1: #fff4f9;
   --gh-pattern-2: #ffebf1;
@@ -166,7 +180,7 @@ button {
   z-index: -1;
 }
 
-/*general classes */
+
 
 nav {
   margin-top: 20px;
@@ -229,7 +243,6 @@ nav {
   color: var(--gh-pink-5);
 }
 
-/*main container */
 .main-container {
   margin: 0 auto;
   display: flex;
@@ -286,7 +299,6 @@ nav {
   box-shadow: var(--dark-shadow);
 }
 
-/*main container right size */
 .main-container-description {
   width: 380px;
 }
@@ -303,7 +315,6 @@ nav {
   margin-top: 50px;
 }
 
-/*favorite container */
 .favorite-container {
   margin: 0 auto;
   display: flex;
@@ -335,4 +346,4 @@ nav {
 
 .favorite-image-title {
   font-size: 3.5rem;
-}
+} */
