@@ -1,61 +1,15 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import logoImage from '../../Images/logo-color.png'
 
-const NavbarContainer = styled.nav`
-  background-color: #B9CDDA;
-  color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-  text-decoration:none;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-`;
+import {NavbarContainer,
+  Logo,
+  NavList,
+  NavItem,
+  MenuButton,
+  CustomLink,
+} from "./NavBar-style"
 
-const Logo = styled.div`
-  width: 120px;
-  height: 120px; 
-  background-image: url(${logoImage});
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-`;
 
-const NavList = styled.ul`
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  text-decoration:none;
-
-  @media (max-width: 768px) {
-    display: ${(props) =>
-      props.isOpen
-        ? "flex"
-        : "none"}; 
-    flex-direction: column;
-    text-align: center;
-  }
-`; 
-
-const NavItem = styled.li`
-  cursor: pointer;
-  text-decoration:none;
-`;
-
-const MenuButton = styled.button`
-  display: none;
-
-  @media (max-width: 768px) {
-    display: block;
-    margin-left: auto;
-  }
-`;
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,19 +20,23 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
+      <CustomLink to={"/"}>
       <Logo/>
-      <MenuButton onClick={toggleMenu}>Menu</MenuButton>
+      </CustomLink>
+      <MenuButton onClick={toggleMenu}/>
       <NavList isOpen={isOpen} >
-        <Link to={"/"}>
-        <NavItem>Home</NavItem>
-        </Link>
-        <Link to={"/favorites"}>
+        <CustomLink to={"/"}>
+      <NavItem>Home</NavItem>
+      </CustomLink>
+        <CustomLink to={"/cutedogs"}>
+        <NavItem>Cute Dogs</NavItem>
+        </CustomLink>
+        <CustomLink to={"/favorites"}>
         <NavItem>Favorites</NavItem>
-        </Link>
-        <Link to={"/dogsbreeds"}>
+        </CustomLink>
+        <CustomLink to={"/dogsbreeds"}>
         <NavItem>Breeds</NavItem>
-        </Link>
-        <NavItem>Contact</NavItem>
+        </CustomLink>
       </NavList>
     </NavbarContainer>
   );

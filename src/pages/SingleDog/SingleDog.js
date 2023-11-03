@@ -1,8 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { dogOptions } from "../../options";
 
-import styled from "styled-components";
+import {
+  StyledSection,
+  StyledGrid,
+  StyledImage,
+  StyledTitle,
+  StyledDescription,
+  StyledListItem,
+  StyledLink,
+} from "./SingleDog-style.js";
 
 const SingleDog = () => {
   const [dog, setDog] = useState([]);
@@ -63,83 +71,4 @@ const SingleDog = () => {
 
 export default SingleDog;
 
-const StyledSection = styled.section`
-  max-width: 5xl;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  background-color: #b9cdda;
-`;
 
-const StyledGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 8px;
-  padding: 8px;
-  
-  
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 1fr;
-    place-items: center;
-  }
-`;
-
-const StyledImage = styled.img`
-   width: 100%;
-  max-height: 350px;
-  object-fit: cover;
-  border-radius: 4px;
-  padding-right:10px;
-`;
-
-const StyledTitle = styled.h1`
-  font-size: 3rem;
-  font-weight: bold;
-  color: #586F6B;
-  margin-bottom: 8px;
-
-  @media (min-width: 768px) {
-    font-size: 5rem;
-  }
-`;
-
-const StyledDescription = styled.p`
-  color: #202030;
-  margin-bottom: 8px;
-  font-size: 1rem;
-  line-height: 1.5;
-
-  @media (min-width: 768px) {
-    font-size: 1.25rem;
-  }
-`;
-
-const StyledListItem = styled.li`
-  font-size: 1rem;
-  color: #202030;
-  line-height: 1.5;
-
-  span {
-    font-weight: bold;
-    color: #202030;
-  }
-
-`;
-
-const StyledLink = styled(Link)`
-  display: inline-block;
-  background-color: #586F6B;
-  margin-top:10px;
-  padding: 8px 24px;
-  border-radius: 4px;
-  color: white;
-  transition: all 0.2s;
-  text-decoration:none;
-
-  &:hover {
-    background-color: #586F6B;
-  }
-`;

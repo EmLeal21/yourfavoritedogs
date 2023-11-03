@@ -1,7 +1,15 @@
 import React, { useEffect, useState } from "react";
 import { dogOptions, deleteDogOptions } from "../../options";
 import { MdRemoveCircle } from "react-icons/md";
-import styled from "styled-components";
+import {MainContainer,
+  Header,
+  Title,
+  DogGrid,
+  DogLink,
+  DogImage,
+  RemoveButton,
+  PageButton
+} from "./Favorites-style"
 
 const Favorites = () => {
   const [favorites, setFavorites] = useState([]);
@@ -60,7 +68,7 @@ const Favorites = () => {
           </DogLink>
         ))}
       </DogGrid>
-      {/* Paginação simples */}
+
       <PageButton>
         <button
           onClick={() => setCurrentPage(currentPage - 1)}
@@ -82,92 +90,4 @@ const Favorites = () => {
 
 export default Favorites;
 
-const MainContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #b9cdda;
-`;
 
-const Header = styled.div`
-  text-align: center;
-  padding: 8px;
-`;
-
-const Title = styled.h1`
-  font-size: 3rem;
-  font-weight: bold;
-  text-align: center;
-  color: #14080e;
-`;
-
-const DogGrid = styled.div`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  gap: 8px;
-  margin: 10px 0;
-
-  @media (min-width: 768px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: 1024px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
-
-const DogLink = styled.div`
-  background: #546a76;
-  padding: 16px;
-  border-radius: 4px;
-  transition: all 0.2s;
-
-  &:hover {
-    background: #586f6b;
-  }
-`;
-
-const DogImage = styled.img`
-  width: 100%;
-  max-height: 288px;
-  object-fit: cover;
-  border-radius: 4px;
-`;
-const RemoveButton = styled.button`
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-`;
-
-const PageButton = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  color: #d7dae5;
-
-  button {
-    padding: 8px 16px;
-    border-radius: 4px;
-    background-color: #586f6b;
-    color: #d7dae5;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: #14080e;
-    }
-
-    &:disabled {
-      background-color: #d7dae5;
-      color: #586f6b;
-      cursor: not-allowed;
-    }
-
-    & + button {
-      margin-left: 10px; // Espaçamento entre os botões
-    }
-  }
-`;
