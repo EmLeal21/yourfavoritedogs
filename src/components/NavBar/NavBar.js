@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
+import logoImage from '../../Images/logo-color.png'
 
 const NavbarContainer = styled.nav`
   background-color: #B9CDDA;
@@ -9,6 +10,7 @@ const NavbarContainer = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  text-decoration:none;
 
   @media (max-width: 768px) {
     flex-direction: column;
@@ -17,27 +19,33 @@ const NavbarContainer = styled.nav`
 `;
 
 const Logo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
+  width: 120px;
+  height: 120px; 
+  background-image: url(${logoImage});
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const NavList = styled.ul`
   list-style: none;
   display: flex;
   gap: 20px;
+  text-decoration:none;
 
   @media (max-width: 768px) {
     display: ${(props) =>
       props.isOpen
         ? "flex"
-        : "none"}; /* Controla a visibilidade das opções de navegação */
+        : "none"}; 
     flex-direction: column;
     text-align: center;
   }
-`;
+`; 
 
 const NavItem = styled.li`
   cursor: pointer;
+  text-decoration:none;
 `;
 
 const MenuButton = styled.button`
@@ -58,9 +66,9 @@ const Navbar = () => {
 
   return (
     <NavbarContainer>
-      <Logo>Logo</Logo>
+      <Logo/>
       <MenuButton onClick={toggleMenu}>Menu</MenuButton>
-      <NavList isOpen={isOpen}>
+      <NavList isOpen={isOpen} >
         <Link to={"/"}>
         <NavItem>Home</NavItem>
         </Link>
