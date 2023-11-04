@@ -31,9 +31,9 @@ const Home = () => {
   return (
     <MainContainer>
       <Header>
-        <Title>My Favorite Dogs</Title>
+        <Title>Your Favorite Dogs</Title>
         <StyledParagraph>
-          Welcome to My Favorite Dogs. Here you can find a variety of cute
+          Welcome to Your Favorite Dogs. Here you can find a variety of cute
           pictures of dogs, you can favorite the ones you like the most and you
           can also remove them.
           You can also search for a particular breed and

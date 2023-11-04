@@ -5,26 +5,16 @@ export const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   background-color: #b9cdda;
+  min-height: 100vh;
+
+ 
 `;
 
 export const Header = styled.div`
   text-align: center;
   padding: 8px;
-  button {
-    padding: 8px 16px;
-    border-radius: 4px;
-    background-color: #586F6B;
-    color: #d7dae5;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: #14080e;
-    }
-  }
 `;
 
 export const Title = styled.h1`

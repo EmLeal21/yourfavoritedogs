@@ -5,6 +5,9 @@ export const FooterContainer = styled.footer`
   color: #14080e;
   text-align: center;
   padding: 16px;
+  width: 100%;
+  position: relative;
+
 
   span{
     font-weight:bold;

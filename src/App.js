@@ -10,10 +10,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <div className="body">
       <BrowserRouter>
         <NavBar />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/cutedogs" element={<DogImages />} />
@@ -21,8 +20,10 @@ function App() {
           <Route path="/dogsbreeds" element={<DogssBreeds/>}/>
           <Route path="/:name" element={<SingleCat/>}/>
         </Routes>
+  
         <Footer/>
       </BrowserRouter>
+      
     </div>
   );
 }
