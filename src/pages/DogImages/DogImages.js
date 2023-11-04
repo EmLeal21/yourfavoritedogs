@@ -12,13 +12,13 @@ import {
 } from "./DogImages-styles";
 
 const DogImages = () => {
-  const [dogData, setDogData] = useState(null);
+  const [dogData, setDogData] = useState([]);
   
 
   const fetchData = async () => {
     try {
       const res = await fetch(
-        "https://api.thedogapi.com/v1/images/search?limit=8", 
+        "https://api.thedogapi.com/v1/images/search?limit=6", 
         dogOptions
       );
       const data = await res.json();
@@ -65,11 +65,11 @@ const DogImages = () => {
   return (
     <MainContainer>
       <Header>
-        <Title>Random Cute Dogs</Title>
-        <button onClick={handleOnClick}>Randomize</button>
+        <Title>Cute Image of Dogs</Title>
+        <button onClick={handleOnClick}>More Images</button>
       </Header>
       <DogGrid>
-        {dogData?.slice(0, 6).map((dog) => (
+        {dogData.map((dog) => (
           <DogLink key={dog.id}>
             <DogImage src={dog.url} alt="dog" />
             <FavoriteButton onClick={(event) => onClickAdd(event, dog.id)}>

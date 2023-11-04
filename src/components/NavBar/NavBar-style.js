@@ -15,7 +15,6 @@ export const NavbarContainer = styled.nav`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
-/* Adicione as seguintes linhas para alinhar o MenuButton na lateral direita */
 position: relative;
   justify-content: space-between;
   }
@@ -28,7 +27,7 @@ export const Logo = styled.div`
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  align-self: center; /* Centraliza o logo verticalmente */
+  align-self: center;
 `;
 
 export const NavList = styled.ul`

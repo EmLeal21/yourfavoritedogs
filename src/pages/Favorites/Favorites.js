@@ -16,6 +16,10 @@ const Favorites = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentFavorites = favorites.slice(startIndex, endIndex);
+
   const fetchData = async () => {
     try {
       const res = await fetch(
@@ -49,14 +53,12 @@ const Favorites = () => {
     }
   };
 
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const currentFavorites = favorites.slice(startIndex, endIndex);
+ 
 
   return (
     <MainContainer>
       <Header>
-        <Title>Your Favorite Images of Dogs</Title>
+        <Title>Your Favorite Images of Cute Dogs</Title>
       </Header>
       <DogGrid>
         {currentFavorites.map((favorite) => (
