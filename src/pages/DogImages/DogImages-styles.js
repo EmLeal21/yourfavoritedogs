@@ -28,6 +28,7 @@ export const Header = styled.div`
 
 export const Title = styled.h1`
   font-size: 3rem;
+  margin-bottom:50px;
   font-weight: bold;
   text-align: center;
   color: #14080e;
@@ -69,6 +70,7 @@ export const DogImage = styled.img`
 export const FavoriteButton = styled.button`
   background-color: transparent;
   border: none;
+  position: relative;
   cursor: pointer;
   span {
     font-size: 24px;

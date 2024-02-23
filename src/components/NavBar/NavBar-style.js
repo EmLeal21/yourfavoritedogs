@@ -68,7 +68,7 @@ export const MenuButton = styled.button`
     width: 50px;
     height: 50px;
     background-image: url(${MenuImage});
-    background-color: #B9CDDA;
+   background-color: #B9CDDA;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
