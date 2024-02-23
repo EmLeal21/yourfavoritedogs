@@ -33,7 +33,7 @@ const Home = () => {
       <Header>
         <Title>Your Favorite Dogs</Title>
         <StyledParagraph>
-          Welcome to Your Favorite Dogs. Here you can find a variety of cute
+         <span> Welcome to Your Favorite Dogs.</span> Here you can find a variety of cute
           pictures of dogs, you can favorite the ones you like the most and you
           can also remove them.
           You can also search for a particular breed and

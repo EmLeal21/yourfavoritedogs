@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState} from "react";
 import { MdFavoriteBorder} from "react-icons/md";
 import { dogOptions, PostDogOptions } from "../../options";
 import {
@@ -13,6 +13,7 @@ import {
 
 const DogImages = () => {
   const [dogData, setDogData] = useState([]);
+  const [apiCalled, setApiCalled] = useState(false);
   
 
   const fetchData = async () => {
@@ -24,14 +25,18 @@ const DogImages = () => {
       const data = await res.json();
 
       setDogData(data);
+      setApiCalled(true);
     } catch (error) {
-      console.error("Erro ao buscar imagens de cachorros:", error);
+      console.error("Erro ao buscar imagens:", error);
     }
   };
 
+
   useEffect(() => {
+    if(!apiCalled){
     fetchData();
-  }, []);
+    }
+  }, [apiCalled]);
 
   const handleOnClick = (e) => {
     fetchData();
@@ -65,11 +70,11 @@ const DogImages = () => {
   return (
     <MainContainer>
       <Header>
-        <Title>Cute Image of Dogs</Title>
+        <Title>Random Images of Dogs</Title>
         <button onClick={handleOnClick}>More Images</button>
       </Header>
       <DogGrid>
-        {dogData.map((dog) => (
+        {dogData && dogData.map((dog) => (
           <DogLink key={dog.id}>
             <DogImage src={dog.url} alt="dog" />
             <FavoriteButton onClick={(event) => onClickAdd(event, dog.id)}>

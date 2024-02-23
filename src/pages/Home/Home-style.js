@@ -6,8 +6,9 @@ export const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  background-color: #b9cdda;
+ background-color: #b9cdda;
   min-height: 100vh;
+  width:100vw;
 
  
 `;
@@ -28,7 +29,7 @@ export const Title = styled.h1`
 export const DogGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  gap: 8px;
+  gap: 20px;
   margin: 10px 0;
 
   @media (min-width: 768px) {
@@ -53,7 +54,7 @@ export const DogLink = styled.div`
 
 export const DogImage = styled.img`
   width: 100%;
-  max-height: 288px;
+  max-height: 300px;
   object-fit: cover;
   border-radius: 4px;
 `;
@@ -70,4 +71,5 @@ export const StyledParagraph = styled.p`
   font-size: 1.3rem;
   color: #14080e;
   margin: 20px;
+  margin-top:40px;
 `;
